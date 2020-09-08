@@ -17,6 +17,13 @@ Once you have the basic installation, you need to put it in development mode:
 ```bash
 $ composer development-enable
 ```
+### Update
+
+```bash
+$ composer update
+```
+
+### Launch
 
 ```bash
 $ php -S 0.0.0.0:8080 -ddisplay_errors=0 -t public public/index.php
@@ -24,6 +31,3 @@ $ php -S 0.0.0.0:8080 -ddisplay_errors=0 -t public public/index.php
 $ composer serve
 ```
 
-```bash
-$ composer update
-```
