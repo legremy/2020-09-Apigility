@@ -1,8 +1,6 @@
-Apigility Skeleton Application
-==============================
+# Apigility Skeleton Application
 
-Installation
-------------
+## Installation
 
 ### Via Composer (create-project)
 
@@ -31,3 +29,34 @@ $ php -S 0.0.0.0:8080 -ddisplay_errors=0 -t public public/index.php
 $ composer serve
 ```
 
+## Getting started
+
+[Getting started](https://apigility.org/documentation/intro/getting-started)
+
+### Create an API
+
+### Create a RPC service
+
+New Service -> RPC -> define name and route (here **Ping** and `/ping`)
+
+Add a field : Fields -> Name : **ack** -> Description : **Acknowledge the request with a timestamp**
+
+In `module/Status/src/V1/Rpc/Ping/PingController.php` : 
+
+```php
+<?php
+namespace Status\V1\Rpc\Ping;
+
+use Zend\Mvc\Controller\AbstractActionController;
+use ZF\ContentNegotiation\ViewModel;
+
+class PingController extends AbstractActionController
+{
+    public function pingAction()
+    {
+        return new ViewModel([
+            'ack' => time()
+        ]);
+    }
+}
+```
